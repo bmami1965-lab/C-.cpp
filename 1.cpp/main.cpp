@@ -1,26 +1,46 @@
 #include <iostream>
-
 using namespace std;
-class student {
-	string name ;
-	int ID;
+class result{
+	
+	int score;
 	
 	public:
-		student(){
-			cout<<"the class initinalized";
+		result (int sScore ){
+			score= sScore;
 		}
-		student(int sID, string sname ){
-			ID = sID;
-			name = sname;
-			cout<<sID<<sname <<endl;
-		}
-};
+			
+			
+		void checkGrade(){
+			if (score> 90 && score< 100 ){
+				cout<< "A";
+			}
+			else if(score> 80 && score< 89){
+					cout<< "B";
+				}
+			else if(score> 70 && score< 79){
+				cout<< "C";
+			}
+			else if(score> 60 && score< 69){
+				cout<< "D";
+			}
+			else	{
+				cout<< "F";
+			}
 
-int main() {
+
+}
+};
+int main (){
+	int score;
+	cout<<"Enter your score"<<endl;
+	cin>>score;
+	result r1(score);
 	
-	student st1(1213, "ABEBE");
+	
+	r1.checkGrade();
+	
+	
 	
 	return 0;
-	
 	
 }
